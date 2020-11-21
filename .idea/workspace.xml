@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="565d153f-4c76-459f-8211-073cd6329865" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/consistent_hash.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.14.4/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1kbWKCJBzZ5rAUu9AwryevmEZ99" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="consistent_hash" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="orchlab.com/consistent_hash" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.cn,direct" />
+      </map>
+    </environment>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1080" y="570" key="#Go_Modules" timestamp="1605969746873">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state x="1080" y="570" key="#Go_Modules/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605969746873" />
+    <state x="744" y="391" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605969809974">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state x="744" y="391" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605969809974" />
+    <state width="2518" height="489" key="GridCell.Tab.0.bottom" timestamp="1605972580026">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.0.bottom/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580026" />
+    <state width="2518" height="489" key="GridCell.Tab.0.center" timestamp="1605972580022">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.0.center/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580022" />
+    <state width="2518" height="489" key="GridCell.Tab.0.left" timestamp="1605972580022">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.0.left/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580022" />
+    <state width="2518" height="489" key="GridCell.Tab.0.right" timestamp="1605972580023">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.0.right/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580023" />
+    <state width="2518" height="489" key="GridCell.Tab.1.bottom" timestamp="1605972580031">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.1.bottom/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580031" />
+    <state width="2518" height="489" key="GridCell.Tab.1.center" timestamp="1605972580029">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.1.center/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580029" />
+    <state width="2518" height="489" key="GridCell.Tab.1.left" timestamp="1605972580029">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.1.left/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580029" />
+    <state width="2518" height="489" key="GridCell.Tab.1.right" timestamp="1605972580030">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="2518" height="489" key="GridCell.Tab.1.right/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605972580030" />
+    <state x="789" y="368" key="SettingsEditor" timestamp="1605969762529">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state x="789" y="368" key="SettingsEditor/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605969762529" />
+    <state width="1280" height="707" key="XDebugger.FullValuePopup" timestamp="1605970310407">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state width="1280" height="707" key="XDebugger.FullValuePopup/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605970310407" />
+    <state x="981" y="458" width="597" height="548" key="find.popup" timestamp="1605970901085">
+      <screen x="0" y="25" width="2560" height="1415" />
+    </state>
+    <state x="981" y="458" width="597" height="548" key="find.popup/2560.25.2560.1365/0.25.2560.1415@0.25.2560.1415" timestamp="1605970901085" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/main.go</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/chash/chash.go</url>
+          <line>109</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
