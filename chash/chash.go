@@ -1,7 +1,8 @@
 package chash
 
 import (
-	"crypto/sha1"
+	"hash/fnv"
+
 	//"hash/fnv"
 	"math"
 	"sort"
@@ -88,19 +89,20 @@ func (h *HashRing) generate() {
 	}
 
 	totalVirtualSpots := h.VirualSpots * len(h.Weights)
+	//totalVirtualSpots := h.VirualSpots
 	h.Nodes = NodesArray{}
 
 	for nodeKey, w := range h.Weights {
 		spots := int(math.Floor(float64(w) / float64(totalW) * float64(totalVirtualSpots)))
 		for i := 1; i <= spots; i++ {
-			//hash := fnv.New32()
-			hash := sha1.New()
+			hash := fnv.New32()
+			//hash := sha1.New()
 			hash.Write([]byte(nodeKey + ":" + strconv.Itoa(i)))
 			hashBytes := hash.Sum(nil)
 			n := Node{
 				NodeKey:   nodeKey,
-				SpotValue: genValue(hashBytes[6:10]),
-				//SpotValue: genValue(hashBytes),
+				//SpotValue: genValue(hashBytes[6:10]),
+				SpotValue: genValue(hashBytes),
 			}
 			h.Nodes = append(h.Nodes, n)
 			hash.Reset()
@@ -125,12 +127,12 @@ func (h *HashRing) GetNode(s string) string {
 		return ""
 	}
 
-	//hash := fnv.New32()
-	hash := sha1.New()
+	hash := fnv.New32()
+	//hash := sha1.New()
 	hash.Write([]byte(s))
 	hashBytes := hash.Sum(nil)
-	v := genValue(hashBytes[6:10])
-	//v := genValue(hashBytes)
+	//v := genValue(hashBytes[6:10])
+	v := genValue(hashBytes)
 	i := sort.Search(len(h.Nodes), func(i int) bool { return h.Nodes[i].SpotValue >= v })
 
 	if i == len(h.Nodes) {
