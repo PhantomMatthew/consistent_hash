@@ -1,9 +1,10 @@
 package chash
 
 import (
+	"crypto/sha1"
+	jump "github.com/lithammer/go-jump-consistent-hash"
+	"hash"
 	"hash/fnv"
-
-	//"hash/fnv"
 	"math"
 	"sort"
 	"strconv"
@@ -33,10 +34,12 @@ type HashRing struct {
 	Nodes       NodesArray
 	Weights     map[string]int
 	mu          sync.RWMutex
+	HashFuncName string
+	HashFunc 	hash.Hash
 }
 
 //NewHashRing create a hash ring with virual spots
-func NewHashRing(spots int) *HashRing {
+func NewHashRing(spots int, hashName string) *HashRing {
 	if spots == 0 {
 		spots = DefaultVirualSpots
 	}
@@ -44,9 +47,12 @@ func NewHashRing(spots int) *HashRing {
 	h := &HashRing{
 		VirualSpots: spots,
 		Weights:     make(map[string]int),
+		HashFuncName:  hashName,
 	}
 	return h
 }
+
+type HashFunc func()
 
 //AddNodes add nodes to hash ring
 func (h *HashRing) AddNodes(nodeWeight map[string]int) {
@@ -89,23 +95,17 @@ func (h *HashRing) generate() {
 	}
 
 	totalVirtualSpots := h.VirualSpots * len(h.Weights)
-	//totalVirtualSpots := h.VirualSpots
 	h.Nodes = NodesArray{}
 
 	for nodeKey, w := range h.Weights {
 		spots := int(math.Floor(float64(w) / float64(totalW) * float64(totalVirtualSpots)))
 		for i := 1; i <= spots; i++ {
-			hash := fnv.New32()
-			//hash := sha1.New()
-			hash.Write([]byte(nodeKey + ":" + strconv.Itoa(i)))
-			hashBytes := hash.Sum(nil)
 			n := Node{
 				NodeKey:   nodeKey,
-				//SpotValue: genValue(hashBytes[6:10]),
-				SpotValue: genValue(hashBytes),
+				SpotValue: h.HashCalculation((nodeKey + ":" + strconv.Itoa(i))),
 			}
 			h.Nodes = append(h.Nodes, n)
-			hash.Reset()
+			h.HashFunc.Reset()
 		}
 	}
 	h.Nodes.Sort()
@@ -127,16 +127,37 @@ func (h *HashRing) GetNode(s string) string {
 		return ""
 	}
 
-	hash := fnv.New32()
-	//hash := sha1.New()
-	hash.Write([]byte(s))
-	hashBytes := hash.Sum(nil)
-	//v := genValue(hashBytes[6:10])
-	v := genValue(hashBytes)
+	v := h.HashCalculation(s)
 	i := sort.Search(len(h.Nodes), func(i int) bool { return h.Nodes[i].SpotValue >= v })
 
 	if i == len(h.Nodes) {
 		i = 0
 	}
 	return h.Nodes[i].NodeKey
+}
+
+func (h *HashRing) HashCalculation(content string) uint32 {
+	var v uint32
+	if h.HashFuncName == "sha1" {
+		h.HashFunc = sha1.New()
+		h.HashFunc.Write([]byte(content))
+		hashBytes := h.HashFunc.Sum(nil)
+		v = genValue(hashBytes[6:10])
+	}
+
+	if h.HashFuncName == "fnv" {
+		h.HashFunc = fnv.New32()
+		h.HashFunc .Write([]byte(content))
+		hashBytes := h.HashFunc .Sum(nil)
+		v = genValue(hashBytes)
+	}
+
+	if h.HashFuncName == "jump" {
+		h.HashFunc = jump.NewCRC32()
+		v = (uint32)(jump.New(4, jump.NewCRC32()).Hash(content))
+		//h.HashFunc .Write([]byte(content))
+		//hashBytes := h.HashFunc .Sum(nil)
+		//v = genValue(hashBytes)
+	}
+	return v
 }
